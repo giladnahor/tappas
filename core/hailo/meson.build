@@ -1,7 +1,7 @@
 # Project Declaration
 
 project('gst-hailo-tools', 'c', 'cpp',
-        version : '3.27.1',
+        version : '3.27.0',
         default_options : [ 'buildtype=release',
                             'c_std=c11', 'cpp_std=c++17']
        )
@@ -53,7 +53,10 @@ if get_option('include_python')
     gobj_dep = dependency('gobject-2.0')
     pygobj_dep = dependency('pygobject-3.0')
     gx_deps = [glib_dep, gmod_dep, gobj_dep, pygobj_dep]
-
+    
+    pygobj_base_inc_dir = pygobj_dep.get_pkgconfig_variable('includedir')
+    pygobj_inc_dir = include_directories(pygobj_base_inc_dir / 'pygobject-3.0')
+    
     # Pybind Include Directories
     pymod = import('python')
     python_version = 'python' + get_option('python_version')

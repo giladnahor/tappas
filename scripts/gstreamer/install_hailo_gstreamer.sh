@@ -93,7 +93,7 @@ function main() {
 
     echo "Compiling Hailo Gstreamer target $TARGET, with $num_cores_to_use cpu cores, build type $BUILD_MODE $reconfigure_flag"
 
-    CC=gcc-9 CXX=g++-9 meson build.$BUILD_MODE $reconfigure_flag --prefix "${INSTALLATION_DIR}" --buildtype $BUILD_MODE \
+    CC=gcc-12 CXX=g++-12 meson build.$BUILD_MODE $reconfigure_flag --prefix "${INSTALLATION_DIR}" --buildtype $BUILD_MODE \
                             -Dtarget=$TARGET \
                             -Dtarget_platform=$TARGET_PLATFORM \
                             -Dlibargs="-I/usr/include/hailo/,-I/usr/include/gstreamer-1.0/gst/hailo/" \

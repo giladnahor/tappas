@@ -32,8 +32,8 @@ libcairo2-dev
 gir1.2-gstreamer-1.0 
 python3-gi
 python-gi-dev 
-gcc-9 
-g++-9 
+gcc-12 
+g++-12 
 lsb-release 
 autoconf 
 automake 

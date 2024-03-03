@@ -134,7 +134,7 @@ parse_args $@
 
 # If the video provided is from a camera
 if [[ $input_source =~ "/dev/video" ]]; then
-    source_element="v4l2src device=$input_source name=src_0 ! videoflip video-direction=horiz"
+    source_element="v4l2src device=$input_source name=src_0 ! image/jpeg ! queue leaky=no max-size-buffers=3 ! decodebin ! videoflip video-direction=horiz"
 else
     source_element="filesrc location=$input_source name=src_0 ! decodebin"
 fi

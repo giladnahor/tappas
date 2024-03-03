@@ -160,7 +160,7 @@ function gmmlib_install() {
     log_info "Compiling gmmlib"
     get_repo gmmlib "$GMMLIB_VERSION"
     mkdir -p build && pushd build
-    cmake -DCMAKE_BUILD_TYPE=Release CMAKE_C_COMPILER=/usr/bin/gcc-9 -DCMAKE_CXX_COMPILER=/usr/bin/g++-9 ../
+    cmake -DCMAKE_BUILD_TYPE=Release CMAKE_C_COMPILER=/usr/bin/gcc-12 -DCMAKE_CXX_COMPILER=/usr/bin/g++-12 ../
     cmake --build . --config Release -j $num_cores_to_use
     sudo cmake --install .
     
@@ -208,7 +208,7 @@ function media_driver_install() {
     get_repo media-driver "$MEDIA_DRIVER_VERSION" "$MEDIA_DRIVER_COMMIT_HASH"
     mkdir -p build && pushd build
 
-    cmake -DCMAKE_BUILD_TYPE=Release CMAKE_C_COMPILER=/usr/bin/gcc-9 -DCMAKE_CXX_COMPILER=/usr/bin/g++-9 ../
+    cmake -DCMAKE_BUILD_TYPE=Release CMAKE_C_COMPILER=/usr/bin/gcc-12 -DCMAKE_CXX_COMPILER=/usr/bin/g++-12 ../
     make -j $num_cores_to_use
     sudo make install
 
